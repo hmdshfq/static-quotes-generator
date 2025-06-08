@@ -38,10 +38,11 @@ h1 {
     text-wrap: pretty;
 }
 #quote {
-    line-height: 1.5;
+    line-height: 1.25;
     font-family: 'Crimson Pro',serif;
     font-style: italic;
     font-size: 1.5rem;
+    font-weight: 200;
 }
 #author {
     font-weight: 400;
