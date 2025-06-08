@@ -1,4 +1,9 @@
-const quotes = [
+interface Quote {
+    quote: string;
+    author: string;
+}
+
+const quotes: Quote[] = [
     {
         quote: 'Life isn’t about getting and having, it’s about giving and being.',
         author: 'Kevin Kruse',
@@ -409,14 +414,20 @@ const quotes = [
     },
 ];
 
-const quoteElement = document.querySelector('#quote');
-const authorElement = document.querySelector('#author');
-const newQuoteButton = document.querySelector('button');
+const quoteElement = document?.querySelector?.('#quote');
+const authorElement = document?.querySelector?.('#author');
+const newQuoteButton = document?.querySelector?.('button');
 
-newQuoteButton.addEventListener('click', () => {
-    let randomNumber = Math.ceil(Math.random() * quotes.length);
-    let quote = quotes[randomNumber].quote;
-    let author = quotes[randomNumber].author;
-    quoteElement.textContent = quote;
-    authorElement.textContent = author;
-})
+if (quoteElement !== null && authorElement !== null && newQuoteButton !== null) {
+    
+        const addQuote = () => {
+            let randomNumber = Math.ceil(Math.random() * quotes.length);
+            let quote = quotes[randomNumber].quote;
+            let author = quotes[randomNumber].author;
+            quoteElement.textContent = quote;
+            authorElement.textContent = author;
+        }
+        
+        newQuoteButton.addEventListener('click', addQuote);
+}
+
